@@ -265,7 +265,7 @@ pub(crate) fn verify_trust(
     let mut verify_param =
         openssl::x509::verify::X509VerifyParam::new().map_err(Error::OpenSslError)?;
     if let Some(st) = signing_time_epoc {
-        verify_param.set_time(st);
+        verify_param.set_time(st.try_into().unwrap());
     } else {
         verify_param
             .set_flags(X509VerifyFlags::NO_CHECK_TIME)
