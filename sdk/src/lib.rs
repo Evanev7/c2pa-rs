@@ -157,7 +157,7 @@ pub(crate) mod hashed_uri;
 pub(crate) mod ingredient;
 
 #[allow(dead_code)]
-pub(crate) mod jumbf;
+pub mod jumbf;
 
 pub(crate) mod manifest;
 pub(crate) mod manifest_assertion;
